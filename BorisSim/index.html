@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css"> <!-- подключение CSS -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Вахрушев">
+    <title>no data</title>
+  </head>
+  <body>
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, #99cccc, gray);
+      }
+    </style>
+
+      <h1 style="color: white">Рандомайзер пар</h1>
+    <img id="BasePhoto" src="Boy.jpg" width="25%" title="мальчик"> <br>
+    <p style="color: white">подходят ли они друг другу?🥰</p>
+    <img id="Base2Photo" src="Girl.jpg" width="25%" title="девочка"> <br> <p></p>
+    <button id="BaseButton" type="button" name="button" title="ну тыкни пж">Далее</button> <br> <br>
+
+    <script>
+      const Button = document.getElementById('BaseButton');
+      const Photo = document.getElementById('BasePhoto');
+      const Photo2 = document.getElementById(`Base2Photo`);
+
+      // Массив с путями к изображениям
+      const images1 = [
+        'BoyPhotos/image1.jpg',
+        'BoyPhotos/image2.jpg',
+        'BoyPhotos/image3.jpg',
+        'BoyPhotos/image4.jpg',
+        'BoyPhotos/image5.jpg',
+        'BoyPhotos/image6.jpg',
+        'BoyPhotos/image7.jpg',
+        'BoyPhotos/image8.jpg',
+        'BoyPhotos/image9.jpg',
+        'BoyPhotos/image10.jpg',
+        'BoyPhotos/image11.jpg',
+        'BoyPhotos/image12.jpg',
+        'BoyPhotos/image13.jpg',
+        'BoyPhotos/image14.jpg',
+        'BoyPhotos/image15.jpg',
+        'BoyPhotos/image16.jpg',
+      ];
+
+      const images2 = [
+        'GirlPhotos/image1.jpg',
+        'GirlPhotos/image2.jpg',
+        'GirlPhotos/image3.jpg',
+        'GirlPhotos/image4.jpg',
+        'GirlPhotos/image5.jpg',
+        'GirlPhotos/image6.jpg',
+        'GirlPhotos/image7.jpg',
+        'GirlPhotos/image8.jpg',
+        'GirlPhotos/image9.jpg',
+        'GirlPhotos/image10.jpg',
+        'GirlPhotos/image11.jpg',
+      ];
+
+
+      Button.addEventListener('click', () => {
+        // Генерируем случайный индекс
+        const Ri = Math.floor(Math.random() * images1.length);
+        // Берем случайное изображение
+        const Rp = images1[Ri];
+        // Меняем src у картинки
+        Photo.src = Rp;
+        // теперь для девочки
+        const Ri2 = Math.floor(Math.random() * images2.length);
+        const Rp2 = images2[Ri2];
+        Photo2.src = Rp2
+      });
+    </script>
+
+
+  </body>
+</html>
